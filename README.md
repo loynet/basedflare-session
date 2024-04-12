@@ -2,11 +2,11 @@
 
 A package that
 extends [Python's requests session](https://docs.python-requests.org/en/latest/_modules/requests/sessions/) to solve
-some [BasedFlare](https://basedflare.com/) Proof of Work (PoW) challenges.
-
+some [BasedFlare](https://basedflare.com/) Proof of Work (PoW) challenges automatically.
+It also includes utility functions to solve the challenges manually.
 
 Please note that **this package is a work in progress** and may not function in all cases.
-Currently, it supports the `argon2` and `sha256` PoW challenges. 
+Currently, it supports the `argon2` and `sha256` PoW challenges.
 Any other challenge, such as a CAPTCHA, will raise an exception.
 
 ## Usage
