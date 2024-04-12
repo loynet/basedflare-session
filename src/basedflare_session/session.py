@@ -1,6 +1,6 @@
 from urllib.parse import urlparse
 import requests
-from .utils import solve_argon2
+from .utils import solve_argon2, solve_sha256
 from .exceptions import ChallengeRequestError
 
 
@@ -9,7 +9,12 @@ class BasedSession(requests.Session):
 
     def __init__(self):
         super().__init__()
-        self.solvers = {'argon2': solve_argon2}
+        self.solvers = {
+            'argon2': solve_argon2,
+            # sha256 does not require the same parameters as argon2 (time_cost, memory_cost)
+            # but BasedFlare sends them anyway, so we have to wrap it to keep the same parser
+            'sha256': lambda salt, secret, difficulty, *args: solve_sha256(salt, secret, difficulty)
+        }
 
     def request(self, method, url, **kwargs):
         domain = urlparse(url).netloc
@@ -56,3 +61,5 @@ class BasedSession(requests.Session):
         )
         if res.status_code != requests.codes.found:
             raise ChallengeRequestError(f'Unexpected status code {res.status_code} when posting the challenge solution')
+        if '_basedflare_pow' not in res.headers.get('Set-Cookie', ''):
+            raise ChallengeRequestError('The server did not send the bypass cookie after solving the challenge')

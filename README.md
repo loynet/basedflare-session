@@ -6,7 +6,7 @@ some [BasedFlare](https://basedflare.com/) Proof of Work (PoW) challenges.
 
 
 Please note that **this package is a work in progress** and may not function in all cases.
-Currently, it only supports the `argon2` PoW challenge. 
+Currently, it supports the `argon2` and `sha256` PoW challenges. 
 Any other challenge, such as a CAPTCHA, will raise an exception.
 
 ## Usage

@@ -13,7 +13,7 @@ requires-python = ">=3.8"
 authors = [
     { name = "loynet", email = "loynet@protonmail.com" },
 ]
-description = "Extends the requests-flavored session to solve BasedFlare challenges."
+description = "Provides a requests-flavored session to solve BasedFlare challenges."
 readme = "README.md"
 license = { file = "LICENSE" }
 keywords = ["basedflare", "session"]
