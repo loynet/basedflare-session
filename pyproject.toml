@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "basedflare-session"
-version = "0.0.1"
+version = "0.1.1"
 dependencies = [
     "requests>=2.31.0",
     "argon2-cffi>=23.1.0",
