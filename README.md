@@ -1,8 +1,6 @@
 # basedflare-session
 
-A package that
-extends [Python's requests session](https://docs.python-requests.org/en/latest/_modules/requests/sessions/) to solve
-some [BasedFlare](https://basedflare.com/) Proof of Work (PoW) challenges automatically.
+A package that extends [Python's requests session](https://docs.python-requests.org/en/latest/_modules/requests/sessions/) to solve some [BasedFlare](https://basedflare.com/) Proof of Work (PoW) challenges automatically.
 It also includes utility functions to solve the challenges manually.
 
 Please note that **this package is a work in progress** and may not function in all cases.
